@@ -1,0 +1,30 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+.header{
+    height: 162px;
+    background-color: #6E8098;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    border: none !important;
+}
+.quickMenu{
+    position: absolute;
+    left: 100px;
+}
+.quickmenu .dijitToolbar{
+    border: none;
+    background-color: transparent;
+}
+
+.appContainer {
+    height: 100%;
+    margin: 5px;
+}

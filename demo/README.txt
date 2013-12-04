@@ -1,0 +1,1 @@
+An example of using logging.debug during the development of an app.
