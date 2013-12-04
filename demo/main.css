@@ -42,3 +42,28 @@ html, body {
     overflow-x: hidden;
     overflow-y: scroll;
 }
+
+.demoComments h2 {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.demoComments dl dt {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.demoComments dl dd {
+    margin: 4px 0px;
+}
+
+.demoComments dl dd span {
+    font-weight: bold;
+}
+
+.codeBlock {
+    display: block;
+    border: 1px dashed steelblue;
+    margin: 8px 40px;
+    padding: 8px;
+    background-color: aliceblue;
+}
