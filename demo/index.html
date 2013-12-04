@@ -82,5 +82,76 @@
 <body class="claro">
 <div data-dojo-type="demo/containers/AppContainer">
 </div>
+<div class="demoComments">
+  <h1>Application to demo the js-ppwcode-util-log component</h1>
+
+  <h2>Getting started</h2>
+
+  <p>
+    This is an application to demo the <strong>js-ppwcode-util-log</strong> component.
+    A complete tutorial on the possibilities of the <strong>js-ppwcode-util-log</strong> component can be found <a
+      href="http://www.peopleware.be/blog/">here</a>.
+    <br/>
+    When using the demo application, it is recommended to open the developer console of your browser.
+    Instructions on how to do this in <a href="http://www.google.com/chrome">Google Chrome</a>
+    can be found <a href="https://developers.google.com/chrome-developer-tools/docs/console">here</a>.
+  </p>
+
+  <h2>Clicking buttons</h2>
+  <dl>
+    <dt>INFO</dt>
+    <dd>
+      When clicking the INFO button, the following INFO message should appear in the console: <span
+        style="color: black;">demo/header/menu/QuickMenu - App QuickMenu.Clicked: info</span>
+    </dd>
+  </dl>
+  <dl>
+    <dt>DEBUG</dt>
+    <dd>
+      When clicking the DEBUG button, the following DEBUG message should appear in the console: <span
+        style="color: blue;">demo/header/menu/QuickMenu - App QuickMenu.Clicked: debug</span>
+    </dd>
+  </dl>
+  <dl>
+    <dt>ERROR</dt>
+    <dd>
+      When clicking the ERROR button, the following ERROR message should appear in the console: <span
+        style="color: red;">demo/header/menu/QuickMenu - App QuickMenu.Clicked: error</span>
+    </dd>
+  </dl>
+  <dl>
+    <dt>CUSTOM</dt>
+    <dd>
+      When clicking the CUSTOM button, the following WARN message should appear in the console: <span
+        style="color: black;">myCustomLogger - This custom warning message is printed</span>
+    </dd>
+  </dl>
+  <h2>Override via URL query parameter</h2>
+
+  <p>
+    The CUSTOM button is using a custom logger named <strong>myCustomLogger</strong>.<br/>
+    You can override the logLevel of the myCustomLogger logger by adding the following URL query parameter to the
+    browser's address bar: <strong>?logLevel-myCustomLogger=DEBUG</strong><br/>
+    The URL then becomes:
+    <span class="codeBlock">http://localhost:&lt;port&gt;/js-ppwcode-util-log/demo/index.html<strong>?logLevel-myCustomLogger=DEBUG</strong></span>
+    After loading the demo application with this parameter, pressing the CUSTOM button will log 2 lines to the console.
+  </p>
+  <ul>
+    <li style="font-weight: bold;">myCustomLogger - This custom info message is NOT printed</li>
+    <li style="font-weight: bold;">myCustomLogger - This custom warning message is printed</li>
+  </ul>
+  <p>
+    As you can see, the first message is printed at INFO level while dojoConfig configured the logLevel of
+    myCustomLogger to level WARN. This means we have successfully overridden the logLevel using the query parameter.
+    <br/>
+    When you set the logLevel in the query parameter to ERROR, you'll see that nothing is written to the console when
+    the CUSTOM button is pressed.
+  </p>
+
+  <p>
+    It is also possible to configure multiple logLevels in the query parameters like this:
+    <span class="codeBlock">http://localhost:&lt;port&gt;/js-ppwcode-util-log/demo/index.html<strong>?logLevel-demo/header/menu/QuickMenu=ERROR&logLevel-myCustomLogger=ERROR</strong></span>
+  </p>
+</div>
 </body>
 </html>
