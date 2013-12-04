@@ -1,84 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PPW Logger example</title>
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit/themes/claro/claro.css"
-          type="text/css" media="screen" charset="utf-8"/>
-    <link rel="stylesheet" href="./main.css" type="text/css" media="screen"
-          charset="utf-8"/>
+  <title>PPW Logger example</title>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit/themes/claro/claro.css"
+        type="text/css" media="screen" charset="utf-8"/>
+  <link rel="stylesheet" href="./main.css" type="text/css" media="screen"
+        charset="utf-8"/>
 
 
-<script>
+  <script>
     var dojoConfig = {
-        async: true,
-        parseOnload: false,
-        isDebug: true,
-        has: {"dojo-debug-messages": false,
-            // logging levels are defined here.
-            // In most cases it will be defined in the form: "logLevel-<package/module>"
-            // with the level on the right hand side.
-            "logLevel-app/header": "INFO",
-            "logLevel-app/header/menu/QuickMenu": "DEBUG",
-            // It is also possible to name a logger to whatever you want.
-            // This could be useful when calling a specific logger for a specific function, or when using it in HTML.
-            "logLevel-myCustomLogger": "WARN"
-        },
+      async: true,
+      parseOnload: false,
+      isDebug: true,
+      has: {"dojo-debug-messages": false,
+        // logging levels are defined here.
+        // In most cases it will be defined in the form: "logLevel-<package/module>"
+        // with the level on the right hand side.
+        "logLevel-app/header": "INFO",
+        "logLevel-app/header/menu/QuickMenu": "DEBUG",
+        // It is also possible to name a logger to whatever you want.
+        // This could be useful when calling a specific logger for a specific function, or when using it in HTML.
+        "logLevel-myCustomLogger": "WARN"
+      },
 
-        baseUrl: "/",
-        packages: [
-            { name: "log", location: "../../log" },
-            { name: "demo", location: "../../demo" }
-        ]
+      baseUrl: "/",
+      packages: [
+        { name: "log", location: "../../log" },
+        { name: "demo", location: "../../demo" }
+      ]
     };
-</script>
-<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js"></script>
+  </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js"></script>
 
-<script>
+  <script>
     // As this is an HTML page which has no module ID, we need to require
     // the log/main (called logFactory in the parameter list).
     // We can get a logger from the logFactory by name. This name can be anything.
     require([
-        "dojo/parser",
-        "dojo/ready",
-        // The log/main is the logFactory that we need to create a logger instance in this HTML file.
-        "log/main",
-        "demo/containers/AppContainer",
-        "dojo/domReady!"],
-            function (parser, ready, logFactory) {
-                ready(function () {
-                    // Let the logFactory create a logger with name "index.html" and store it in a var "logger".
-                    var logger = logFactory.getLogger("index.html");
+      "dojo/parser",
+      "dojo/ready",
+      // The log/main is the logFactory that we need to create a logger instance in this HTML file.
+      "log/main",
+      "demo/containers/AppContainer",
+      "dojo/domReady!"],
+        function (parser, ready, logFactory) {
+          ready(function () {
+            // Let the logFactory create a logger with name "index.html" and store it in a var "logger".
+            var logger = logFactory.getLogger("index.html");
 
-                    // Set the logLevel of the logger to INFO.
-                    // All logging messages with level INFO or higher will be printed.
-                    logger.setLevel(logFactory.Level.INFO);
+            // Set the logLevel of the logger to INFO.
+            // All logging messages with level INFO or higher will be printed.
+            logger.setLevel(logFactory.Level.INFO);
 
-                    // Print a DEBUG log message.
-                    // It will not appear in the logging as the logLevel is set to INFO.
-                    // DEBUG is a lower level than INFO.
-                    logger.debug("This debug message will NOT be printed");
-                    // Print an INFO log message.
-                    // It will be printed in the logging as the logLevel is set to INFO.
-                    // INFO is an equal level to the INFO level defined for this logger.
-                    logger.info("This info message will be printed");
-                    // Print a WARN log message.
-                    // It will be printed in the logging as the logLevel is set to INFO.
-                    // WARN is a higher level to the INFO level defined for this logger.
-                    logger.warn("This warning message will be printed");
+            // Print a DEBUG log message.
+            // It will not appear in the logging as the logLevel is set to INFO.
+            // DEBUG is a lower level than INFO.
+            logger.debug("This debug message will NOT be printed");
+            // Print an INFO log message.
+            // It will be printed in the logging as the logLevel is set to INFO.
+            // INFO is an equal level to the INFO level defined for this logger.
+            logger.info("This info message will be printed");
+            // Print a WARN log message.
+            // It will be printed in the logging as the logLevel is set to INFO.
+            // WARN is a higher level to the INFO level defined for this logger.
+            logger.warn("This warning message will be printed");
 
-                    var parsePromise = parser.parse();
-                    parsePromise.then(
-                            function () {
-                                // Print a log message at INFO level.
-                                logger.info("Main content parsed");
-                            },
-                            function (error) {
-                                // Print a log message at ERROR level.
-                                logger.error("Main content not parsed", error);
-                            });
+            var parsePromise = parser.parse();
+            parsePromise.then(
+                function () {
+                  // Print a log message at INFO level.
+                  logger.info("Main content parsed");
+                },
+                function (error) {
+                  // Print a log message at ERROR level.
+                  logger.error("Main content not parsed", error);
                 });
-            });
-</script>
+          });
+        });
+  </script>
 </head>
 <body class="claro">
 
