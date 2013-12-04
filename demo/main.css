@@ -70,3 +70,13 @@ html, body {
     padding: 8px;
     background-color: aliceblue;
 }
+
+.warningBlock {
+    display: block;
+    font-weight: bold;
+    color: red;
+    border: 1px dashed red;
+    margin: 8px 0px;
+    padding: 8px;
+    background-color: #ffdddc;
+}
