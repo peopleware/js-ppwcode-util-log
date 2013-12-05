@@ -35,7 +35,7 @@ define(["dojo/_base/kernel", "dojo/has", "dojo/io-query", "module", "./_base/log
         }
 
         function mid2LoggerName(mid) {
-            return mid.replace("/\//g", ".");
+            return mid.replace(/\//g, ".");
         }
 
         function getInitialLogLevelFor(mid) {
