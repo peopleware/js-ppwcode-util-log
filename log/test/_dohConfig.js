@@ -21,7 +21,7 @@
   window.require.has["logLevel-test.log.main_DEBUG"] = "DEBUG";
   window.require.has["logLevel-test.log.main_TRACE"] = "TRACE";
   // for logger tests
-  window.require.has["logLevel-log.test.test-logger"] = "TRACE";
+  window.require.has["logLevel-log.test.Logger"] = "TRACE";
 
 
   console.log("loaded _dohConfig.js");
