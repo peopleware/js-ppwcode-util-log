@@ -1,5 +1,5 @@
 define([
-  "./test-main",
+  "./main",
   "./Logger",
   "./JsonObjectLayout",
   "./Appender"
