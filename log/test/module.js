@@ -1,6 +1,6 @@
 define([
   "./main",
-  "./Logger",
+  "./logger",
   "./JsonObjectLayout",
   "./Appender"
 ], 1);
