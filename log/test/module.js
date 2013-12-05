@@ -2,5 +2,5 @@ define([
   "./test-main",
   "./test-logger",
   "./JsonObjectLayout",
-  "./test-appender"
+  "./Appender"
 ], 1);
