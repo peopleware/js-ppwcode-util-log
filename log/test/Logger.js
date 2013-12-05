@@ -3,7 +3,7 @@ define(["doh/main", "log/main", "log/logger!", "module"], function (doh, logFact
     {
       // module level in boot
       // injected with has["logLevel-log.test.test-logger"] = "TRACE";
-      name: "TEST logger MODULE",
+      name: "TEST[Logger]",
       runTest: function (t) {
         t.assertTrue(logger != null);
         // level test via has
