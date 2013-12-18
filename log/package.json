@@ -1,6 +1,6 @@
 {
   "name": "be.js-ppwcode-util-log-I",
-  "version": "1.0",
+  "version": "2.0",
   "description": "This package contains a logging component that is wrapping the log4javascript logging framework",
   "keywords": [
     "PeopleWare",

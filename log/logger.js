@@ -37,8 +37,9 @@ define(["./main", "module"],
                      require,             // AMD require; usually a context-sensitive require bound to the module making the plugin request
                      /*Function*/ done) { // the function the plugin should call with the return value once it is done
         var mid = require.module.mid; // the mid of the calling module
-        var logger = log4javascript.getLogger(log4javascript.mid2LoggerName(mid));
-        var initialLevel = log4javascript.getInitialLogLevelFor(mid);
+        var loggerIdToLookup = id !== null && id !== "" ? id : mid;
+        var logger = log4javascript.getLogger(log4javascript.mid2LoggerName(loggerIdToLookup));
+        var initialLevel = log4javascript.getInitialLogLevelFor(loggerIdToLookup);
         if (initialLevel) {
           logger.setLevel(initialLevel); // cannot set null
         }
