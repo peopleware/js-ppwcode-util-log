@@ -26,6 +26,14 @@
     {
       "name": "Mark Cuypers",
       "email": "Mark_Cuypers@peopleware.be"
+    },
+    {
+      "name": "Ramil Rakhmetov",
+      "email": "ramil_rakhmetov@peopleware.be"
+    },
+    {
+      "name": "Dimitri Mestdagh",
+      "email": "dimitri.mestdagh@optis.be"
     }
   ],
   "bugs": {
