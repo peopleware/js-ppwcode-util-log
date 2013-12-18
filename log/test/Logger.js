@@ -1,4 +1,4 @@
-define(["doh/main", "log/main", "log/logger!", "module"], function (doh, logFactory, logger, module) {
+define(["doh/main", "log/main", "log/logger!", "log/logger!testLoggerName", "module"], function (doh, logFactory, logger, testLogger, module) {
   doh.register("tests.log.logger", [
     {
       // module level in boot
@@ -10,6 +10,14 @@ define(["doh/main", "log/main", "log/logger!", "module"], function (doh, logFact
         t.assertEqual(logFactory.getInitialLogLevelFor(logger.name), "TRACE");
         // module test logger module should be the same as current module
         t.assertEqual(logFactory.loggerName2Mid(logger.name), module.id);
+      }
+    },
+    {
+      name: "TEST[Logger with ID injected via plugin]",
+      runTest: function(t) {
+        t.assertTrue(testLogger != null);
+        t.assertEqual("WARN", testLogger.getLevel());
+        t.assertEqual("testLoggerName", testLogger.name);
       }
     }
   ])
