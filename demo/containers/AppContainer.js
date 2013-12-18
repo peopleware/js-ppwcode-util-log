@@ -19,8 +19,8 @@ define(["dojo/_base/declare",
   "dojo/text!./AppContainer.html",
   "demo/header/HeaderPane",
   // Load our log/logger plugin.
-  "log/logger!"],
-  function (declare, BorderContainer, _TemplatedMixin, template, HeaderPane, logger) {
+  "log/logger!myCustomLogger2"],
+  function (declare, BorderContainer, _TemplatedMixin, template, HeaderPane, customLogger2) {
     return declare("loggingTest.CustomBorderContainer", [BorderContainer, _TemplatedMixin], {
 
       templateString: template,
@@ -33,13 +33,14 @@ define(["dojo/_base/declare",
         }
         catch (ERR) {
           // Logging an error message. The ERR parameter should be always the last parameter in the list.
-          logger.error("quick menu is NOT added", ERR);
+          customLogger2.error("quick menu is NOT added", ERR);
         }
       },
       constructor: function () {
         this.inherited(arguments);
         // Logging a message at info level.
-        logger.info("app container inheritance success");
+        customLogger2.info("app container inheritance success, this message should NOT be printed to log");
+        customLogger2.warn("app loaded, this message should be printed to log");
       }
     });
   }
